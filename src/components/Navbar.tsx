@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
-      <div className={styles.logo}>Sakthivelan</div>
+      <div className={styles.logo}>Sakthivelan S</div>
 
       <div className={styles.links}>
         <a href="#about">About</a>

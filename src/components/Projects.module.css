@@ -1,0 +1,33 @@
+.projects {
+  background: #0f172a;
+  color: white;
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.projects h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #3b82f6;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  margin: 20px auto;
+  padding: 30px;
+  max-width: 500px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.warn {
+  background: #f87171;
+  color: white;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+}

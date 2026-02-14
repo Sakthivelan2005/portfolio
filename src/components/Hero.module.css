@@ -1,0 +1,130 @@
+.hero {
+  min-height: 100vh;
+  background-color: #0f172a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    flex-direction: row;
+  }
+}
+
+.left {
+  max-width: 500px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .left {
+    text-align: left;
+  }
+}
+
+.left h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+}
+
+.left h1 span {
+  background: linear-gradient(to right, #3b82f6, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.left h2 {
+  margin-top: 15px;
+  font-size: 1.5rem;
+  color: #3b82f6;
+}
+
+.left p {
+  margin-top: 20px;
+  color: #94a3b8;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .buttons {
+    justify-content: flex-start;
+  }
+}
+
+.primaryBtn {
+  padding: 12px 24px;
+  background-color: #2563eb;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.primaryBtn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #2563eb;
+}
+
+.secondaryBtn {
+  padding: 12px 24px;
+  border: 1px solid #2563eb;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.secondaryBtn:hover {
+  background-color: #2563eb;
+}
+
+.right {
+  position: relative;
+  width: 250px;
+  height: 250px;
+}
+
+.right svg {
+  font-size: 60px;
+}
+
+.iconReact {
+  position: absolute;
+  color: #61dafb;
+}
+
+.iconNode {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #3c873a;
+}
+
+.iconMongo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #4db33d;
+}
+
+.iconTs {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  color: #3178c6;
+}

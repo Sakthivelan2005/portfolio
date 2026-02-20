@@ -33,7 +33,7 @@ const WarningPopup = () => {
           style={{
             position: "fixed",
             top: "30px",
-            right: "30px",
+            justifySelf: "center",
             width: "350px",
             background: "linear-gradient(135deg, #ff4d4d, #ff1a1a)",
             color: "white",

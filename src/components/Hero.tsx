@@ -1,12 +1,30 @@
-import { motion } from "framer-motion";
+import { motion, useMotionValue} from "framer-motion";
 import { FaReact, FaNodeJs } from "react-icons/fa";
 import { SiMongodb, SiTypescript } from "react-icons/si";
 import styles from "./Hero.module.css";
+import { role } from "../data/Roles";
+import { useEffect } from "react";
 
 const Hero: React.FC = () => {
+  const ResumeURL =
+    "https://drive.google.com/file/d/1nvfqsgV73FAVEa3Vw7MRDFEY6BTzq7KM/view?usp=sharing";
+
+  // Mouse interaction
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      x.set(e.clientX - window.innerWidth / 2);
+      y.set(e.clientY - window.innerHeight / 2);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, [x, y]);
+
   return (
     <section className={styles.hero}>
-      
       {/* LEFT SIDE */}
       <motion.div
         initial={{ opacity: 0, x: -80 }}
@@ -18,11 +36,13 @@ const Hero: React.FC = () => {
           Hi, I'm <span>Sakthivelan</span>
         </h1>
 
-        <h2>Student</h2>
+        <h2>{role}</h2>
 
         <p>
-          I build complete end-to-end web and mobile applications using
-          React, TypeScript, Node.js and MongoDB.
+          I am a BCA Student (CGPA 8.85) with strong foundation in OOPS, Data
+          Structures, MERN Stack and Backend Development. I build complete
+          end-to-end web and mobile applications using React, TypeScript,
+          Node.js and MongoDB.
         </p>
 
         <div className={styles.buttons}>
@@ -30,14 +50,19 @@ const Hero: React.FC = () => {
             View Projects
           </a>
 
-          <a href="/resume.pdf" className={styles.secondaryBtn}>
+          <a
+            href={ResumeURL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.secondaryBtn}
+          >
             Download Resume
           </a>
         </div>
       </motion.div>
 
       {/* RIGHT SIDE FLOATING ICONS */}
-      <motion.div
+       <motion.div
         initial={{ opacity: 0, x: 80 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}

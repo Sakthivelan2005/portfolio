@@ -15,10 +15,16 @@
   backdrop-filter: blur(10px);
 }
 
-.logo {
+.logoDark {
   font-weight: bold;
   font-size: 1.3rem;
   color: white;
+}
+
+.logoLight {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: black;
 }
 
 .links a {

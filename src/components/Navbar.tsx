@@ -1,27 +1,28 @@
-import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 import styles from "./Navbar.module.css";
 
 const Navbar: React.FC = () => {
-  const [scrolled, setScrolled] = useState(false);
+  const context = useContext(ThemeContext);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+  if (!context) return null;
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const { theme, toggleTheme } = context;
 
   return (
-    <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
-      <div className={styles.logo}>Sakthivelan S</div>
+    <nav className={styles.navbar}>
+      <div className={theme === "dark" ? styles.logoDark : styles.logoLight}>Sakthivelan S</div>
 
       <div className={styles.links}>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="#blog">Blog</a>
         <a href="#contact">Contact</a>
+
+        <button onClick={toggleTheme} className={styles.toggle}>
+          {theme === "dark" ? "☀ Light" : "🌙 Dark"}
+        </button>
       </div>
     </nav>
   );

@@ -1,19 +1,22 @@
 import styles from "./Projects.module.css";
+import { projects } from "../data/project";
 
 const Projects: React.FC = () => {
   return (
-    <section id="projects" className={styles.projects}>
-
+    <section className={styles.section} id="projects">
       <h2>Projects</h2>
 
-      <div className={styles.card}>
-        <h3>Tailor Junction</h3>
-        <p>Mobile tailoring service app with full backend integration.</p>
-      </div>
-
-      <div className={styles.card}>
-        <h3>Kirana Fashion</h3>
-        <p>E-commerce website with authentication & cart system.</p>
+      <div className={styles.grid}>
+        {projects.map((project, index) => (
+          <div key={index} className={styles.card}>
+            <h3>{project.title}</h3>
+            <p className={styles.tech}>{project.tech}</p>
+            <p>{project.description}</p>
+            <a href={project.github} target="_blank">
+              View Code
+            </a>
+          </div>
+        ))}
       </div>
     </section>
   );

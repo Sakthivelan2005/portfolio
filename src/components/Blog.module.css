@@ -1,0 +1,46 @@
+.section {
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  font-weight: 600;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.card {
+  padding: 25px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  text-align: left;
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.card span {
+  font-size: 0.85rem;
+  opacity: 0.6;
+}
+
+.card p {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}

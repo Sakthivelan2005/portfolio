@@ -2,7 +2,7 @@ import { motion, useInView, useMotionValue, animate } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import styles from "./Skills.module.css";
 import { skills } from "../data/Skills";
-
+import { Icons } from "../config/Icons";
 const Skills: React.FC = () => {
   return (
     <section id="skills" className={styles.skills}>
@@ -30,6 +30,10 @@ const SkillCard: React.FC<{ skill: Skill; index: number }> = ({
   skill,
   index,
 }) => {
+
+  
+const iconConfig = Icons[skill.name];
+
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -59,10 +63,19 @@ const SkillCard: React.FC<{ skill: Skill; index: number }> = ({
       transition={{ delay: index * 0.15 }}
       whileHover={{ scale: 1.03 }}
     >
-      <div className={styles.header}>
-        <span>{skill.name}</span>
-        <span className={styles.percent}>{display}%</span>
-      </div>
+     <div className={styles.header}>
+  <div className={styles.skillInfo}>
+    {iconConfig && (
+  <iconConfig.icon
+    className={styles.skillIcon}
+    style={{ color: iconConfig.color }}
+  />
+)}
+    <span>{skill.name}</span>
+  </div>
+
+  <span className={styles.percent}>{display}%</span>
+</div>
 
       <div className={styles.progressContainer}>
         <motion.div

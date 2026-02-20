@@ -53,3 +53,18 @@
   background: var(--primary);
   border-radius: 10px;
 }
+
+.skillInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skillIcon {
+  font-size: 1.4rem;
+  transition: 0.3s ease;
+}
+
+.card:hover .skillIcon {
+  transform: scale(1.2);
+}

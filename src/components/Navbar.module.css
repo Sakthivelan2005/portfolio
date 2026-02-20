@@ -1,3 +1,7 @@
+/* ===============================
+   Navbar Container
+================================= */
+
 .navbar {
   position: sticky;
   top: 0;
@@ -9,12 +13,21 @@
 
   padding: 18px 60px;
 
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
   background: rgba(255, 255, 255, 0.05);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Logo */
+/* Optional subtle shadow when scrolling (if you add later) */
+.navbar:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ===============================
+   Logo
+================================= */
 
 .logoDark,
 .logoLight {
@@ -22,7 +35,8 @@
   font-weight: 600;
   letter-spacing: 1px;
   cursor: pointer;
-  transition: 0.3s ease;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
 .logoDark {
@@ -33,32 +47,41 @@
   color: #111111;
 }
 
-.logoDark:hover,
-.logoLight:hover {
-  background-color: var(--primary);
+/* Animated underline for logo */
+
+.logoDark::after,
+.logoLight::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
 }
 
-/* Links Container */
+.logoDark:hover::after,
+.logoLight:hover::after {
+  width: 100%;
+}
+
+/* ===============================
+   Links Container
+================================= */
 
 .linksDark,
 .linksLight {
   display: flex;
   align-items: center;
   gap: 30px;
-  color: #111111;
 }
 
-/* Navigation Links */
+/* ===============================
+   Navigation Links
+================================= */
 
-.linksDark a{
-  text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 500;
-  position: relative;
-  transition: 0.3s ease;
-  opacity: 0.85;
-  color: #ffffff;
-}
+.linksDark a,
 .linksLight a {
   text-decoration: none;
   font-size: 0.95rem;
@@ -66,12 +89,25 @@
   position: relative;
   transition: 0.3s ease;
   opacity: 0.85;
+}
+
+.linksDark a {
+  color: #ffffff;
+}
+
+.linksLight a {
   color: #111111;
+}
+
+.linksDark a:hover,
+.linksLight a:hover {
+  opacity: 1;
 }
 
 /* Underline animation */
 
-.links a::after {
+.linksDark a::after,
+.linksLight a::after {
   content: "";
   position: absolute;
   width: 0%;
@@ -82,38 +118,57 @@
   transition: width 0.3s ease;
 }
 
-.links a:hover::after {
+.linksDark a:hover::after,
+.linksLight a:hover::after {
   width: 100%;
 }
 
-.links a:hover {
-  opacity: 1;
-}
+/* ===============================
+   Theme Toggle Button
+================================= */
 
-/* Theme Toggle Button */
-
-.toggleDark {
-  padding: 8px 16px;
-  border-radius: 20px;
-  border: 1px solid var(--primary);
-  background: transparent;
-  color: #ffffff;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: 0.3s ease;
-}
-
+.toggleDark,
 .toggleLight {
   padding: 8px 16px;
   border-radius: 20px;
   border: 1px solid var(--primary);
   background: transparent;
-  color: #000000;
   cursor: pointer;
   font-size: 0.9rem;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.toggle:hover {
+.toggleDark {
+  color: #ffffff;
+}
+
+.toggleLight {
+  color: #000000;
+}
+
+.toggleDark:hover,
+.toggleLight:hover {
   background: var(--primary);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* ===============================
+   Responsive (Optional Upgrade)
+================================= */
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 25px;
+  }
+
+  .linksDark,
+  .linksLight {
+    gap: 18px;
+  }
+
+  .linksDark a,
+  .linksLight a {
+    font-size: 0.85rem;
+  }
 }

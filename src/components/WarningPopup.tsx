@@ -1,13 +1,18 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const TOTAL_TIME = 5; // seconds
+const INITIAL_TIME = 5;
+const MAX_TIME = 30;
 
 const WarningPopup = () => {
   const [show, setShow] = useState(true);
-  const [timeLeft, setTimeLeft] = useState(TOTAL_TIME);
+  const [timeLeft, setTimeLeft] = useState(INITIAL_TIME);
+  const [totalTime, setTotalTime] = useState(INITIAL_TIME);
 
+  // Countdown logic
   useEffect(() => {
+    if (!show) return;
+
     const countdown = setInterval(() => {
       setTimeLeft((prev) => {
         if (prev <= 1) {
@@ -20,12 +25,26 @@ const WarningPopup = () => {
     }, 1000);
 
     return () => clearInterval(countdown);
-  }, []);
+  }, [show]);
+
+  // ➕ Add 5 seconds (max 30)
+  const addTime = () => {
+    setTimeLeft((prev) => {
+      const updated = prev + 5;
+      return updated > MAX_TIME ? MAX_TIME : updated;
+    });
+
+    setTotalTime((prev) => {
+    const updated = prev + 5;
+    return updated > MAX_TIME ? MAX_TIME : updated;
+  });
+  };
 
   return (
     <AnimatePresence>
       {show && (
         <motion.div
+          key="popup"
           initial={{ opacity: 0, y: -120, scale: 0.8 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: -120, scale: 0.8 }}
@@ -33,7 +52,8 @@ const WarningPopup = () => {
           style={{
             position: "fixed",
             top: "30px",
-            justifySelf: "center",
+            left: "50%",
+            transform: "translateX(-50%)",
             width: "350px",
             background: "linear-gradient(135deg, #ff4d4d, #ff1a1a)",
             color: "white",
@@ -52,28 +72,49 @@ const WarningPopup = () => {
             Please wait a few days. It will be completed soon.
           </div>
 
-          {/* Countdown Text */}
+          {/* Countdown + Button */}
           <div
             style={{
-              marginTop: "10px",
-              fontSize: "13px",
-              textAlign: "right",
-              opacity: 0.8,
+              marginTop: "12px",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
             }}
           >
-            Closing in {timeLeft}s...
+            <span style={{ fontSize: "13px", opacity: 0.85 }}>
+              Closing in {timeLeft}s...
+            </span>
+
+            <button
+              onClick={addTime}
+              disabled={timeLeft >= MAX_TIME}
+              style={{
+                padding: "4px 10px",
+                fontSize: "12px",
+                borderRadius: "12px",
+                border: "none",
+                cursor: timeLeft >= MAX_TIME ? "not-allowed" : "pointer",
+                background: "#fff",
+                color: "#ff1a1a",
+                fontWeight: 600,
+                opacity: timeLeft >= MAX_TIME ? 0.6 : 1,
+              }}
+            >
+              +5s
+            </button>
           </div>
 
-          {/* Animated Progress Bar */}
+          {/* Dynamic Progress Bar */}
           <motion.div
-            initial={{ width: "100%" }}
+            key={timeLeft} // restart animation when time increases
+            initial={{ width: `${(timeLeft / totalTime) * 100}%` }}
             animate={{ width: "0%" }}
-            transition={{ duration: TOTAL_TIME, ease: "linear" }}
+            transition={{ duration: timeLeft, ease: "linear" }}
             style={{
               height: "4px",
               background: "#fff",
               borderRadius: "2px",
-              marginTop: "8px",
+              marginTop: "10px",
             }}
           />
         </motion.div>

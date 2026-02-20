@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
 import styles from "./Experience.module.css";
 import { experiences } from "../data/Experience";
+import { useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 
 const Experience: React.FC = () => {
-
- 
+const context = useContext(ThemeContext);
+const theme = context ? context.theme : "light";
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="experience">
       <h2>Experience</h2>
 
       <div className={styles.timeline}>
@@ -21,7 +23,7 @@ const Experience: React.FC = () => {
           >
             <div className={styles.header}>
               <img
-                src={exp.logo.light}
+                src={exp.logo[theme === "dark" ? "dark" : "light"]}
                 alt={exp.company}
                 className={styles.logo}
               />

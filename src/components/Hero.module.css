@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 100vh;
   padding: 80px;
   perspective: 1000px;
 }
@@ -17,7 +16,9 @@
 }
 
 .left span {
-  color: var(--primary);
+  background: linear-gradient(90deg,#3b82f6, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .left h2 {
@@ -49,20 +50,28 @@
 .primaryBtn {
   background: var(--primary);
   color: white;
+   
 }
 
 .primaryBtn:hover {
   transform: translateY(-3px);
+  color: white;
+  filter: drop-shadow(0 0 15px #3178c6);
 }
 
-.secondaryBtn {
+.secondaryBtnDark {
+  border: 90px solid var(--primary);
+  
+}
+
+.secondaryBtnLight {
   border: 1px solid var(--primary);
-  color: rgb(77, 80, 80);
+  
 }
-
 .secondaryBtn:hover {
   background: var(--primary);
   color: white;
+  transform: translateY(-3px);  
 }
 
 .right {

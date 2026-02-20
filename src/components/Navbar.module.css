@@ -1,39 +1,119 @@
 .navbar {
-  position: fixed;
+  position: sticky;
   top: 0;
-  width: 100%;
-  padding: 15px 40px;
+  z-index: 1000;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1000;
-  transition: 0.3s;
+
+  padding: 18px 60px;
+
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.scrolled {
-  background: rgba(15, 23, 42, 0.8);
-  backdrop-filter: blur(10px);
+/* Logo */
+
+.logoDark,
+.logoLight {
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
 .logoDark {
-  font-weight: bold;
-  font-size: 1.3rem;
-  color: white;
+  color: #ffffff;
 }
 
 .logoLight {
-  font-weight: bold;
-  font-size: 1.3rem;
-  color: black;
+  color: #111111;
 }
 
-.links a {
-  margin-left: 20px;
+.logoDark:hover,
+.logoLight:hover {
+  background-color: var(--primary);
+}
+
+/* Links Container */
+
+.linksDark,
+.linksLight {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  color: #111111;
+}
+
+/* Navigation Links */
+
+.linksDark a{
   text-decoration: none;
-  color: #cbd5e1;
-  transition: 0.3s;
+  font-size: 0.95rem;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s ease;
+  opacity: 0.85;
+  color: #ffffff;
+}
+.linksLight a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s ease;
+  opacity: 0.85;
+  color: #111111;
+}
+
+/* Underline animation */
+
+.links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.links a:hover::after {
+  width: 100%;
 }
 
 .links a:hover {
-  color: #3b82f6;
+  opacity: 1;
+}
+
+/* Theme Toggle Button */
+
+.toggleDark {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--primary);
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.3s ease;
+}
+
+.toggleLight {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--primary);
+  background: transparent;
+  color: #000000;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.3s ease;
+}
+
+.toggle:hover {
+  background: var(--primary);
 }

@@ -13,14 +13,14 @@ const Navbar: React.FC = () => {
     <nav className={styles.navbar}>
       <div className={theme === "dark" ? styles.logoDark : styles.logoLight}>Sakthivelan S</div>
 
-      <div className={styles.links}>
-        <a href="#about">About</a>
+      <div className={theme === "dark" ? styles.linksDark : styles.linksLight}>
+        <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#blog">Blog</a>
         <a href="#contact">Contact</a>
 
-        <button onClick={toggleTheme} className={styles.toggle}>
+        <button onClick={toggleTheme} className={theme === "dark" ? styles.toggleDark : styles.toggleLight}>
           {theme === "dark" ? "☀ Light" : "🌙 Dark"}
         </button>
       </div>

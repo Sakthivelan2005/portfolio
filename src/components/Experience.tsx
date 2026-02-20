@@ -1,19 +1,10 @@
 import { motion } from "framer-motion";
 import styles from "./Experience.module.css";
 import { experiences } from "../data/Experience";
-import { useEffect, useState } from "react";
 
 const Experience: React.FC = () => {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
 
-  useEffect(() => {
-    const isDark =
-      document.documentElement.classList.contains("dark") ||
-      window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-    setTheme(isDark ? "dark" : "light");
-  }, []);
-
+ 
   return (
     <section className={styles.section}>
       <h2>Experience</h2>
@@ -30,7 +21,7 @@ const Experience: React.FC = () => {
           >
             <div className={styles.header}>
               <img
-                src={exp.logo[theme]}
+                src={exp.logo.light}
                 alt={exp.company}
                 className={styles.logo}
               />

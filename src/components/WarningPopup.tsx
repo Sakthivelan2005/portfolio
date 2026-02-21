@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { CloseIcon } from "../config/Icons";
 
 const INITIAL_TIME = 5;
 const MAX_TIME = 30;
@@ -27,7 +28,7 @@ const WarningPopup = () => {
     return () => clearInterval(countdown);
   }, [show]);
 
-  // ➕ Add 5 seconds (max 30)
+  // Add 5 seconds (max 30)
   const addTime = () => {
     setTimeLeft((prev) => {
       const updated = prev + 5;
@@ -44,16 +45,22 @@ const WarningPopup = () => {
     <AnimatePresence>
       {show && (
         <motion.div
-          key="popup"
-          initial={{ opacity: 0, y: -120, scale: 0.8 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: -120, scale: 0.8 }}
-          transition={{ duration: 0.6, type: "spring", stiffness: 120 }}
+        key="popup"
+        initial={{ opacity: 0, y: -120, scale: 0.8 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        exit={{ opacity: 0, y: -120, scale: 0.8 }}
+        whileHover={{
+          scale: 1.02,
+          boxShadow: "0 20px 50px rgba(0,0,0,0.5)",
+        }}
+        transition={{ duration: 0.6, type: "spring", stiffness: 120 }}
           style={{
             position: "fixed",
             top: "30px",
             justifySelf: "center",
             transform: "translateX(-50%)",
+            border: "1px solid rgba(255,255,255,0.2)",
+            backdropFilter: "blur(10px)",
             width: "350px",
             background: "linear-gradient(135deg, #ff4d4d, #ff1a1a)",
             color: "white",
@@ -64,6 +71,30 @@ const WarningPopup = () => {
             overflow: "hidden",
           }}
         >
+          {/* Close Button */}
+        <motion.button
+          onClick={() => setShow(false)}
+          whileHover={{ rotate: 90, scale: 1.2 }}
+          whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 300 }}
+          style={{
+            position: "absolute",
+            top: "12px",
+            right: "12px",
+            background: "rgba(255,255,255,0.2)",
+            border: "none",
+            borderRadius: "50%",
+            width: "28px",
+            height: "28px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer",
+            backdropFilter: "blur(4px)",
+          }}
+        >
+          {CloseIcon}
+        </motion.button>
           <div style={{ fontWeight: 600, fontSize: "16px" }}>
             🚧 Still working on it!
           </div>

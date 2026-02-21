@@ -7,6 +7,7 @@ import coderzLight from "../assets/coderz-light.webp";
 import genzDark from "../assets/Genz-light.png";
 import genzLight from "../assets/Genz-light.png";
 
+import connect from "../assets/Social-Network-Transparent-PNG.png";
 
 export interface ThemeImage {
   light: string;
@@ -27,3 +28,5 @@ export const Images = {
     dark: genzDark,
   }
 };
+
+export const SocialImage = connect;

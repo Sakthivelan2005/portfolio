@@ -24,6 +24,8 @@ import {
   FaBirthdayCake,
 } from "react-icons/fa";
 
+import { FiX } from "react-icons/fi";
+
 export const Icons: Record<string, IconConfig> = {
   React: { icon: FaReact, color: "#61DBFB" },
   TypeScript: { icon: SiTypescript, color: "#3178C6" },
@@ -96,3 +98,5 @@ export const ContactInfo: ContactInfoItem[] = [
     text: "October 16, 2005",
   },
 ];
+
+export const CloseIcon = <FiX size={16} color="#fff" />

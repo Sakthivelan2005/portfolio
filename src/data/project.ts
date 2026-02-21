@@ -4,7 +4,7 @@ export const projects = [
     tech: "React Native | Node.js",
     description:
       "Mobile beauty service booking app with authentication and backend integration.",
-    github: "https://github.com/Sakthivelan2005/",
+    github: "https://github.com/Sakthivelan2005/MeTime",
   },
   {
     title: "MERN E-commerce",

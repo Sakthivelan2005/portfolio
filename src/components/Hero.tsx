@@ -3,11 +3,14 @@ import { FaReact, FaNodeJs } from "react-icons/fa";
 import { SiMongodb, SiTypescript } from "react-icons/si";
 import styles from "./Hero.module.css";
 import { role } from "../data/Roles";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 
 const Hero: React.FC = () => {
   const ResumeURL =
     "https://drive.google.com/file/d/1nvfqsgV73FAVEa3Vw7MRDFEY6BTzq7KM/view?usp=sharing";
+    const context = useContext(ThemeContext);
+    const theme = context ? context.theme : "light";
 
   // Mouse interaction
   const x = useMotionValue(0);
@@ -54,7 +57,7 @@ const Hero: React.FC = () => {
             href={ResumeURL}
             target="_blank"
             rel="noopener noreferrer"
-            className={styles.secondaryBtn}
+            className={theme === "dark" ? styles.secondaryBtnDark : styles.secondaryBtnLight}
           >
             Download Resume
           </a>

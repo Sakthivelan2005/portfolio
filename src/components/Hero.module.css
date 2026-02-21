@@ -40,7 +40,8 @@
 }
 
 .primaryBtn,
-.secondaryBtn {
+.secondaryBtnDark,
+.secondaryBtnLight {
   padding: 12px 24px;
   border-radius: 6px;
   text-decoration: none;
@@ -60,7 +61,7 @@
 }
 
 .secondaryBtnDark {
-  border: 90px solid var(--primary);
+  border: 1px solid var(--primary);
   
 }
 
@@ -68,7 +69,13 @@
   border: 1px solid var(--primary);
   
 }
-.secondaryBtn:hover {
+.secondaryBtnLight:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-3px);  
+}
+
+.secondaryBtnDark:hover {
   background: var(--primary);
   color: white;
   transform: translateY(-3px);  

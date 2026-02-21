@@ -1,11 +1,112 @@
-.contact {
-  background: #0f172a;
+.footer {
+  width: 100%;
+  padding: 80px 20px 40px;
   text-align: center;
-  padding: 80px 40px;
+  background: var(--bg-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
 }
 
-.contact h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #3b82f6;
+/* ================= Title ================= */
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  position: relative;
+}
+
+.title::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: var(--primary);
+  display: block;
+  margin: 12px auto 0;
+  border-radius: 4px;
+}
+
+/* ================= Contact Info ================= */
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  max-width: 550px;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 16px 20px;
+  border-radius: 16px;
+  text-decoration: none;
+  color: inherit;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contactItem:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  border-color: var(--primary);
+}
+
+/* ================= Icon Wrapper ================= */
+
+.iconWrapper {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-shrink: 0;
+  transition: 0.3s ease;
+}
+
+.contactItem:hover .iconWrapper {
+  box-shadow: 0 0 20px var(--primary);
+}
+
+/* ================= Social Icons ================= */
+
+.socialRow {
+  display: flex;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.socialIcon {
+  font-size: 1.6rem;
+  color: inherit;
+  transition: 0.3s ease;
+}
+
+.socialIcon:hover {
+  color: var(--primary);
+}
+
+/* ================= Footer Bottom ================= */
+
+.bottom {
+  margin-top: 30px;
+  font-size: 0.85rem;
+  opacity: 0.6;
+}
+.titleIcon{
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 5px var(--primary));
+  margin-left: 20px;
 }

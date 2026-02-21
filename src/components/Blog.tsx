@@ -8,11 +8,11 @@ const Blog: React.FC = () => {
 
       <div className={styles.grid}>
         {blogs.map((blog) => (
-          <div key={blog.id} className={styles.card}>
+          <main key={blog.id} className={styles.card}>
             <h3>{blog.title}</h3>
             <span>{blog.date}</span>
             <p>{blog.summary}</p>
-          </div>
+          </main>
         ))}
       </div>
     </section>

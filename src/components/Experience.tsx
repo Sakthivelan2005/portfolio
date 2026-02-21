@@ -13,7 +13,7 @@ const theme = context ? context.theme : "light";
 
       <div className={styles.timeline}>
         {experiences.map((exp, index) => (
-          <motion.div
+          <motion.main
             key={index}
             className={styles.card}
             initial={{ opacity: 0, x: -50 }}
@@ -36,7 +36,7 @@ const theme = context ? context.theme : "light";
             </div>
 
             <p>{exp.description}</p>
-          </motion.div>
+          </motion.main>
         ))}
       </div>
     </section>

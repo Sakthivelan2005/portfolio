@@ -55,7 +55,7 @@ const iconConfig = Icons[skill.name];
   }, [isInView, count, skill.level]);
 
   return (
-    <motion.div
+    <motion.main
       ref={ref}
       className={styles.card}
       initial={{ opacity: 0, y: 40 }}
@@ -85,6 +85,6 @@ const iconConfig = Icons[skill.name];
           transition={{ duration: 1.2 }}
         />
       </div>
-    </motion.div>
+    </motion.main>
   );
 };

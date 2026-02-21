@@ -8,14 +8,14 @@ const Projects: React.FC = () => {
 
       <div className={styles.grid}>
         {projects.map((project, index) => (
-          <div key={index} className={styles.card}>
+          <main key={index} className={styles.card}>
             <h3>{project.title}</h3>
             <p className={styles.tech}>{project.tech}</p>
             <p>{project.description}</p>
             <a href={project.github} target="_blank">
               View Code
             </a>
-          </div>
+          </main>
         ))}
       </div>
     </section>

@@ -14,9 +14,9 @@ const App: React.FC = () => {
       <Navbar />
       <Hero />
       <Experience />
-      <Blog />
       <Skills />
       <Projects />
+      <Blog />
       <Contact />
     </>
   );

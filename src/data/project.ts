@@ -25,6 +25,6 @@ export const projects = [
     tech: "React Native | MySQL | Express.js | Node.js | Socket.io | Expo",
     description:
       "Tailor Junction is an Uber-style, real-time marketplace empowering MSME tailors. Engineered with React Native, Express.js Node.js, and Socket.io for live algorithmic order broadcasting and system telemetry.",
-    github: "https://github.com/Sakthivelan2005/Real_Estate_Platform",
+    github: "https://github.com/Sakthivelan2005/TailorJunction",
   },
 ];

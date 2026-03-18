@@ -1,6 +1,6 @@
 import { motion, useMotionValue} from "framer-motion";
 import { FaReact, FaNodeJs } from "react-icons/fa";
-import { SiMongodb, SiTypescript } from "react-icons/si";
+import { SiMongodb, SiTypescript, SiMysql, SiPhp, SiOracle } from "react-icons/si";
 import styles from "./Hero.module.css";
 import { role } from "../data/Roles";
 import { useContext, useEffect } from "react";
@@ -85,6 +85,27 @@ const Hero: React.FC = () => {
           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
         >
           <FaNodeJs />
+        </motion.div>
+        <motion.div
+          className={styles.iconMysql}
+          animate={{ y: [0, -15, 0] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+        >
+          <SiMysql />
+        </motion.div>
+        <motion.div
+          className={styles.iconPhp}
+          animate={{ y: [0, -15, 0] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+        >
+          <SiPhp />
+        </motion.div>
+        <motion.div
+          className={styles.iconOracle}
+          animate={{ y: [0, -15, 0] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+        >
+          <SiOracle />
         </motion.div>
 
         <motion.div

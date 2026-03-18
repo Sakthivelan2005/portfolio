@@ -120,7 +120,7 @@
 .iconMongo {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 40px;
   color: #4db33d;
 }
 .iconMongo:hover {
@@ -135,4 +135,31 @@
 }
 .iconTs:hover {
   filter: drop-shadow(0 0 15px #3178c6);
+}
+.iconOracle {
+  position: absolute;
+  top: 20px;
+  left: -60px;
+  color: #F80000;
+}
+.iconOracle:hover {
+  filter: drop-shadow(0 0 15px #F80000);
+}
+.iconPhp {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  color: #777BB4;
+}
+.iconPhp:hover {
+  filter: drop-shadow(0 0 15px #777BB4);
+}
+.iconMysql {
+  position: absolute;
+  top: 80px;
+  left: 20px;
+  color: #4479A1;
+}
+.iconMysql:hover {
+  filter: drop-shadow(0 0 15px #4479A1);
 }

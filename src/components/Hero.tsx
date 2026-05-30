@@ -8,7 +8,7 @@ import { ThemeContext } from "../context/ThemeContext";
 
 const Hero: React.FC = () => {
   const ResumeURL =
-    "https://drive.google.com/file/d/1nvfqsgV73FAVEa3Vw7MRDFEY6BTzq7KM/view?usp=sharing";
+    "https://drive.google.com/file/d/1fF4-nGfUcD-SjB6xY6MlBhuuwcScDumw/view?usp=sharing";
     const context = useContext(ThemeContext);
     const theme = context ? context.theme : "light";
 

@@ -5,6 +5,8 @@ interface Skill {
 }
 
 export const skills: Skill[] = [
+  
+  { name: "Python", level: 95 },
   { name: "React", level: 85 },
   { name: "TypeScript", level: 80 },
   { name: "Node.js", level: 75 },

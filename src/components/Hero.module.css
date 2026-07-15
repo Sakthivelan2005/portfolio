@@ -98,7 +98,7 @@
 
 .iconPython {
   position: absolute;
-  bottom: 40px;
+  bottom: 80px;
   left: -40px;
   color: #306998
 }
@@ -107,7 +107,7 @@
 }
 .iconReact {
   position: absolute;
-  bottom: 80px;
+  bottom: 40px;
   left: -30px;
   color: #61dafb;
 }

@@ -1,5 +1,6 @@
 import { FaReact, FaNodeJs, FaPhp } from "react-icons/fa";
 import {
+  SiPython,
   SiTypescript,
   SiMongodb,
   SiExpress,

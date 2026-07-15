@@ -96,10 +96,19 @@
   font-size: 60px;
 }
 
-.iconReact {
+.iconPython {
   position: absolute;
   bottom: 40px;
   left: -40px;
+  color: #306998
+}
+.iconPython:hover {
+   filter: drop-shadow(0 0 15px  #306998);
+}
+.iconReact {
+  position: absolute;
+  bottom: 80px;
+  left: -30px;
   color: #61dafb;
 }
 .iconReact:hover {
@@ -129,7 +138,7 @@
 
 .iconTs {
   position: absolute;
-  bottom: 40px;
+  bottom: 60px;
   right: 40px;
   color: #3178c6;
 }

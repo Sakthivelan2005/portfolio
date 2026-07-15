@@ -106,7 +106,7 @@ const Hero: React.FC = () => {
         </motion.div>
         <motion.div
           className={styles.iconOracle}
-          animate={{ y: [5, 15, 5] }}
+          animate={{ y: [0, -15, 0] }}
           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
         >
           <SiOracle />

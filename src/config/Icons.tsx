@@ -27,6 +27,7 @@ import {
 import { FiX } from "react-icons/fi";
 
 export const Icons: Record<string, IconConfig> = {
+  Python: { icon: SiPython, color: "#3776AB" },
   React: { icon: FaReact, color: "#61DBFB" },
   TypeScript: { icon: SiTypescript, color: "#3178C6" },
   "Node.js": { icon: FaNodeJs, color: "#68A063" },

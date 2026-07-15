@@ -42,10 +42,7 @@ const Hero: React.FC = () => {
         <h2>{role}</h2>
 
         <p>
-          I am a BCA Student (CGPA 8.85) with strong foundation in OOPS, Data
-          Structures, MERN Stack and Backend Development. I build complete
-          end-to-end web and mobile applications using React, TypeScript,
-          Node.js and MongoDB.
+         BCA graduate (8.97 CGPA) with a strong foundation in Object-Oriented Design, data structures, and complexity analysis. I leverage Python, Node.js, and relational databases to engineer scalable, efficient backend systems. Committed to delivering high-quality software by strictly applying DRY and KISS principles.
         </p>
 
         <div className={styles.buttons}>
